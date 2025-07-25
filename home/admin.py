@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Properties
+from .models import Properties, SingleProperty, Contact
+
 admin.site.register(Properties)
-from .models import Contact
 admin.site.register(Contact)
+admin.site.register(SingleProperty)

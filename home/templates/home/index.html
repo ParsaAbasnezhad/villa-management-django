@@ -344,10 +344,10 @@
                 {% for property in properties %}
                     <div class="col-lg-4 col-md-6">
                         <div class="item">
-                            <a href="property-details.html"><img src="{{ property.image.url }}" alt=""></a>
+                            <a href="{% url 'home:detail' property.id %}"><img src="{{ property.image.url }}" alt=""></a>
                             <span class="category">Luxury Villa</span>
                             <h6>${{ property.price }}</h6>
-                            <h4><a href="property-details.html">{{ property.street }}New Street {{ property.city }}, OR {{ property.postal_code }}</a></h4>
+                            <h4><a href="{% url 'home:detail' property.id %}">{{ property.street }}New Street {{ property.city }}, OR {{ property.postal_code }}</a></h4>
                             <ul>
                                 <li>Bedrooms: <span>{{ property.bedrooms }}</span></li>
                                 <li>Bathrooms: <span>{{ property.bathroom }}</span></li>
@@ -356,7 +356,7 @@
                                 <li>Parking: <span>{{ property.parking }}</span></li>
                             </ul>
                             <div class="main-button">
-                                <a href="property-details.html">Schedule a visit</a>
+                                <a href="{% url 'home:detail' property.id %}">Schedule a visit</a>
                             </div>
                         </div>
                     </div>
