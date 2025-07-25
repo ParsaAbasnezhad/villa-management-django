@@ -7,7 +7,6 @@
     <list default="true" id="bddfca1c-7ba5-4124-8616-4ffc78675656" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
@@ -112,7 +111,8 @@
       <updated>1753426130033</updated>
       <workItem from="1753426131171" duration="69000" />
       <workItem from="1753426260022" duration="2613000" />
-      <workItem from="1753467285177" duration="3236000" />
+      <workItem from="1753467285177" duration="5669000" />
+      <workItem from="1753477873322" duration="1085000" />
     </task>
     <servers />
   </component>
