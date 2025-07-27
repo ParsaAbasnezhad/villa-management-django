@@ -2,8 +2,13 @@ from django.db import models
 from django.template.defaultfilters import length
 
 
+class Category(models.Model):
+    about = models.TextField()
+    title = models.CharField(max_length=20)
+    active = models.BooleanField(default=True)
 
-
+    def __str__(self):
+        return self.title
 
 
 class SingleProperty(models.Model):
@@ -32,10 +37,11 @@ class Properties(models.Model):
     # Single Property
     SingleProperty = models.ForeignKey(SingleProperty, null=True, blank=True, on_delete=models.CASCADE,
                                        related_name='SingleProperty')
+    # Category
+    category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.CASCADE, related_name='categories')
 
-
-def __str__(self):
-    return f'{self.title} - {self.contract}'
+    def __str__(self):
+        return f'{self.title}'
 
 
 class Contact(models.Model):
@@ -45,9 +51,5 @@ class Contact(models.Model):
     message = models.TextField()
     date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
-
     def __str__(self):
         return f'{self.fullname} - {self.subject}'
-
-
-

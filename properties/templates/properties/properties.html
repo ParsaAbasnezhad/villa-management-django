@@ -36,14 +36,14 @@
                             <a href="{% url 'home:detail' product.id %}"><img
                                     src="{% static 'images/property-01.jpg' %}" alt=""></a>
                             <span class="category">Luxury Villa</span>
-                            <h6>$2.264.000</h6>
-                            <h4><a href="{% url 'home:detail' product.id %}">{{ details.street }}New
-                                Street {{ details.city }}, OR {{ details.postal_code }}</a></h4>
+                            <h6>${{ product.price }}</h6>
+                            <h4><a href="{% url 'home:detail' product.id %}">{{ product.street }}New
+                                Street {{ product.city }}, OR {{ product.postal_code }}</a></h4>
                             <ul>
                                 <li>Bedrooms: <span>{{ product.bedrooms }}</span></li>
-                                <li>Bathrooms: <span>{{ product.bathrooms }}</span></li>
+                                <li>Bathrooms: <span>{{ product.bathroom }}</span></li>
                                 <li>Area: <span>{{ product.area }}</span></li>
-                                <li>Floor: <span>{{ product.floof }}</span></li>
+                                <li>Floor: <span>{{ product.floor }}</span></li>
                                 <li>Parking: <span>{{ product.parking }} spots</span></li>
                             </ul>
                             <div class="main-button">
