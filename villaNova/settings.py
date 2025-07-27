@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # my app
     'home.apps.HomeConfig',
+    'properties.apps.PropertiesConfig',
     'admin_persian'
 
 ]

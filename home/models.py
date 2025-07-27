@@ -2,13 +2,19 @@ from django.db import models
 from django.template.defaultfilters import length
 
 
+
+
+
+
 class SingleProperty(models.Model):
-    total = models.IntegerField(null=True, blank=True)
-    payment = models.CharField(max_length=15, null=True, blank=True)
-    safety = models.CharField(max_length=15, null=True, blank=True)
+    total = models.IntegerField()
+    payment = models.CharField(max_length=15)
+    safety = models.CharField(max_length=15)
+    contract = models.CharField(max_length=100)
 
 
 class Properties(models.Model):
+    about = models.TextField()
     description = models.TextField()
     title = models.CharField(max_length=100)
     price = models.IntegerField()
@@ -39,5 +45,9 @@ class Contact(models.Model):
     message = models.TextField()
     date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
+
     def __str__(self):
         return f'{self.fullname} - {self.subject}'
+
+
+
