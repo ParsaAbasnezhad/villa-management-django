@@ -24,6 +24,7 @@
                     <div class="main-content">
 
                         <span class="category">Apparment</span>
+                        <a class="btn btn-primary shadow" href="{% url 'properties:visit' %}/?{{ details.title }}/{{ details.id }}">Visit</a>
                         <h4>{{ details.street }}New Street {{ details.city }}, OR {{ details.postal_code }}</h4>
                         <p>{{ details.description }}</p>
                     </div>
@@ -33,7 +34,7 @@
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Best useful links ?
+                                    <a href="#">Best useful links ?</a>
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
