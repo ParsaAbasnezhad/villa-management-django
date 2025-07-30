@@ -4,7 +4,7 @@ class Visite(models.Model):
     email = models.EmailField()
     number = models.CharField(max_length=14)
     message = models.TextField()
-    title = models.CharField()
+    subject = models.TextField()
     fullname = models.CharField()
 
     def __str__(self):

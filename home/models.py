@@ -1,5 +1,5 @@
 from django.db import models
-from django.template.defaultfilters import length
+from django.template.defaultfilters import length, slugify
 
 
 class Category(models.Model):
@@ -21,7 +21,7 @@ class SingleProperty(models.Model):
 class Properties(models.Model):
     about = models.TextField()
     description = models.TextField()
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100,unique=True)
     price = models.IntegerField()
     image = models.ImageField(upload_to='properties/')
     bathroom = models.CharField(max_length=30)
@@ -34,11 +34,18 @@ class Properties(models.Model):
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=20)
     postal_code = models.CharField(max_length=10)
+    #slug
+    slug = models.SlugField(unique=True)
     # Single Property
     SingleProperty = models.ForeignKey(SingleProperty, null=True, blank=True, on_delete=models.CASCADE,
                                        related_name='SingleProperty')
     # Category
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.CASCADE, related_name='categories')
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f'{self.title}'

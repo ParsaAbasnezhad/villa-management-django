@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy, reverse
 from django.views.generic import TemplateView, ListView, View, CreateView
 from home.models import *
 from properties.forms import *
@@ -12,9 +12,6 @@ class PropertiesView(View):
 
     def post(self, request):
         pass
-
-
-from django.http import HttpResponseRedirect
 
 
 class VisitCreateView(CreateView):

@@ -24,9 +24,9 @@
                     <div class="main-content">
 
                         <span class="category">Apparment</span>
-                        <a class="btn btn-primary shadow" href="{% url 'properties:visit' %}/?{{ details.title }}/{{ details.id }}">Visit</a>
                         <h4>{{ details.street }}New Street {{ details.city }}, OR {{ details.postal_code }}</h4>
                         <p>{{ details.description }}</p>
+                        <a class="btn btn-primary w-100" href="{% url 'properties:visit' %}">Visite</a>
                     </div>
 
                     <div class="accordion" id="accordionExample">

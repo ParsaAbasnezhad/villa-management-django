@@ -7,13 +7,16 @@
     <list default="true" id="bddfca1c-7ba5-4124-8616-4ffc78675656" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/home/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/properties/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/properties/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/properties/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/properties/templates/properties/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/properties/templates/properties/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/properties/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/include/header_area_start.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/include/header_area_start.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/villaNova/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/villaNova/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +122,8 @@
       <workItem from="1753483836084" duration="3506000" />
       <workItem from="1753644947497" duration="11208000" />
       <workItem from="1753677700099" duration="28000" />
-      <workItem from="1753826823481" duration="3122000" />
+      <workItem from="1753826823481" duration="4031000" />
+      <workItem from="1753850514175" duration="4949000" />
     </task>
     <servers />
   </component>

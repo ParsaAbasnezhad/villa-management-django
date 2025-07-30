@@ -9,12 +9,6 @@ class PropertiesView(ListView):
     context_object_name = 'properties'
     template_name = 'home/index.html'
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     pk = self.kwargs.get('pk')
-    #     context['detail'] = Properties.objects.get(pk=pk)
-    #     return context
-
 
 def contact(request):
     if request.method == "POST":
@@ -32,9 +26,9 @@ class PropertyDetailViews(DetailView):
     model = Properties
     context_object_name = 'details'
     template_name = 'home/detail.html'
-    pk_url_kwarg = 'id'
+    slug_url_kwarg = 'slug'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['categories'] = Category.objects.filter(active=True)
+        context['categories'] = Category.objects.filter(active=True).first()
         return context
