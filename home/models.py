@@ -16,6 +16,7 @@ class SingleProperty(models.Model):
     payment = models.CharField(max_length=15)
     safety = models.CharField(max_length=15)
     contract = models.CharField(max_length=100)
+    active_parking = models.BooleanField(default=True)
 
 
 class Properties(models.Model):
@@ -37,10 +38,11 @@ class Properties(models.Model):
     # slug
     slug = models.SlugField(unique=True)
     # Single Property
-    SingleProperty = models.ForeignKey(SingleProperty, null=True, blank=True, on_delete=models.CASCADE,
-                                       related_name='SingleProperty')
+    sing = models.ForeignKey(SingleProperty, null=True, blank=True, on_delete=models.CASCADE,
+                             related_name='SingleProperty')
     # Category
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.CASCADE, related_name='categories')
+    img_category = models.ImageField(upload_to='category/')
 
     def save(self, *args, **kwargs):
         if not self.slug:

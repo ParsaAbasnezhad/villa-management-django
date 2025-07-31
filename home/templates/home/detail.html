@@ -26,7 +26,7 @@
                         <span class="category">Apparment</span>
                         <h4>{{ details.street }}New Street {{ details.city }}, OR {{ details.postal_code }}</h4>
                         <p>{{ details.description }}</p>
-                        <a class="btn btn-primary w-100" href="{% url 'properties:visit' %}">Visite</a>
+                        <a class="btn btn-primary w-100" href="{% url 'properties:visit' %}?title={{ details.title}}">Visite</a>
                     </div>
 
                     <div class="accordion" id="accordionExample">
@@ -92,19 +92,19 @@
                         <ul>
                             <li>
                                 <img src="{% static 'images/info-icon-01.png' %}" alt="" style="max-width: 52px;">
-                                <h4>{{ details.SingleProperty.total }}<br><span>Total Flat Space</span></h4>
+                                <h4>{{ details.sing.total }}<br><span>Total Flat Space</span></h4>
                             </li>
                             <li>
                                 <img src="{% static 'images/info-icon-02.png' %}" alt="" style="max-width: 52px;">
-                                <h4>Contract<br><span>{{ details.SingleProperty.contract }}</span></h4>
+                                <h4>Contract<br><span>{{ details.sing.contract }}</span></h4>
                             </li>
                             <li>
                                 <img src="{% static 'images/info-icon-03.png' %}" alt="" style="max-width: 52px;">
-                                <h4>Payment<br><span>{{ details.SingleProperty.payment }}</span></h4>
+                                <h4>Payment<br><span>{{ details.sing.payment }}</span></h4>
                             </li>
                             <li>
                                 <img src="{% static 'images/info-icon-04.png' %}" alt="" style="max-width: 52px;">
-                                <h4>Safety<br><span>{{ details.SingleProperty.safety }}</span></h4>
+                                <h4>Safety<br><span>{{ details.sing.safety }}</span></h4>
                             </li>
                         </ul>
                     </div>
@@ -125,47 +125,49 @@
                 <div class="col-lg-12">
                     <div class="tabs-content">
                         <div class="row">
-                            {% for category in details.categories %}
-                                    <div class="nav-wrapper ">
-                                        <ul class="nav nav-tabs" role="tablist">
-                                            <li class="nav-item active" role="presentation">
-                                                <button class="nav-link active" id="appartment-tab" data-bs-toggle="tab"
-                                                        data-bs-target="#appartment" type="button" role="tab"
-                                                        aria-controls="appartment"
-                                                        aria-selected="true"><a>{{ category.title }}</a>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="appartment" role="tabpanel"
-                                         aria-labelledby="appartment-tab">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="info-table">
-                                                    <ul>
-                                                        <li>Total Flat Space <span>{{ details.total }}</span></li>
-                                                        <li>Floor number <span>3</span></li>
-                                                        <li>Number of rooms <span>8</span></li>
-                                                        <li>Parking Available <span>Yes</span></li>
-                                                        <li>Payment Process <span>Bank</span></li>
-                                                    </ul>
-                                                </div>
+                            <div class="nav-wrapper ">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item active" role="presentation">
+                                        <button class="nav-link active" id="appartment-tab" data-bs-toggle="tab"
+                                                data-bs-target="#appartment" type="button" role="tab"
+                                                aria-controls="appartment"
+                                                aria-selected="true"><a>{{ details.category.title }}</a>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="appartment" role="tabpanel"
+                                     aria-labelledby="appartment-tab">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <div class="info-table">
+                                                <ul>
+                                                    <li>Total Flat Space <span>{{ details.sing.total }}</span></li>
+                                                    <li>Floor number <span>{{ details.floor }}</span></li>
+                                                    <li>Number of rooms <span>{{ details.bathroom }}</span></li>
+                                                    {% if details.sing.active_parking == True %}
+                                                       <li>Parking Available <span>Yes</span></li>
+                                                    {% else %}
+                                                        <li>Parking Available <span>No</span></li>
+                                                    {% endif %}
+                                                    <li>Payment Process <span>{{ details.sing.payment }}</span></li>
+                                                </ul>
                                             </div>
-                                            <div class="col-lg-6">
-                                                <img src="{% static 'images/deal-01.jpg' %}" alt="">
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <h4>All Info About {{ category.title }}</h4>
-                                                <p>{{ category.about }}</p>
-                                                <div class="icon-button">
-                                                    <a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a>
-                                                </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <img src="{% static 'images/deal-01.jpg' %}" alt="">
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <h4>All Info About {{ details.category.title }}</h4>
+                                            <p>{{ details.about }}</p>
+                                            <div class="icon-button">
+                                                <a href="{% url 'properties:visit' %}"><i class="fa fa-calendar"></i> Schedule a visit</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
