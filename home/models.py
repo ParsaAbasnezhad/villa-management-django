@@ -21,7 +21,7 @@ class SingleProperty(models.Model):
 class Properties(models.Model):
     about = models.TextField()
     description = models.TextField()
-    title = models.CharField(max_length=100,unique=True)
+    title = models.CharField(max_length=100, unique=True)
     price = models.IntegerField()
     image = models.ImageField(upload_to='properties/')
     bathroom = models.CharField(max_length=30)
@@ -34,7 +34,7 @@ class Properties(models.Model):
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=20)
     postal_code = models.CharField(max_length=10)
-    #slug
+    # slug
     slug = models.SlugField(unique=True)
     # Single Property
     SingleProperty = models.ForeignKey(SingleProperty, null=True, blank=True, on_delete=models.CASCADE,

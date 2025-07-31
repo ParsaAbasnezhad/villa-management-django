@@ -28,7 +28,7 @@ class PropertyDetailViews(DetailView):
     template_name = 'home/detail.html'
     slug_url_kwarg = 'slug'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['categories'] = Category.objects.filter(active=True).first()
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['categories'] = Category.objects.filter(active=True)
+    #     return context

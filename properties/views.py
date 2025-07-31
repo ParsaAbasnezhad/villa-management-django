@@ -1,17 +1,15 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
-from django.views.generic import TemplateView, ListView, View, CreateView
+from django.views.generic import ListView,  CreateView
 from home.models import *
 from properties.forms import *
 
 
-class PropertiesView(View):
-    def get(self, request):
-        products = Properties.objects.all()
-        return render(request, 'properties/properties.html', {'products': products})
-
-    def post(self, request):
-        pass
+class PropertiesView(ListView):
+    queryset = Properties.objects.all()
+    context_object_name = 'properties'
+    paginate_by = 1
+    template_name = 'properties/properties.html'
 
 
 class VisitCreateView(CreateView):
