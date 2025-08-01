@@ -20,29 +20,29 @@ class SingleProperty(models.Model):
 
 
 class Properties(models.Model):
-    about = models.TextField()
-    description = models.TextField()
-    title = models.CharField(max_length=100, unique=True)
-    price = models.IntegerField()
-    image = models.ImageField(upload_to='properties/')
-    bathroom = models.CharField(max_length=30)
-    bedrooms = models.CharField(max_length=30)
-    floor = models.CharField(max_length=30)
+    about = models.TextField(verbose_name='درباره دسته')
+    description = models.TextField(verbose_name='توضیحات')
+    title = models.CharField(max_length=100, unique=True,verbose_name='عنوان')
+    price = models.IntegerField(verbose_name='قیمت')
+    image = models.ImageField(upload_to='properties/',verbose_name='عکس')
+    bathroom = models.CharField(max_length=30,verbose_name='اتاق')
+    bedrooms = models.CharField(max_length=30,verbose_name='سالن')
+    floor = models.CharField(max_length=30,verbose_name='طبقه')
     area = models.CharField(max_length=30)
     parking = models.CharField(max_length=30)
     # Address vila
-    street = models.CharField(max_length=100)
-    city = models.CharField(max_length=50)
-    state = models.CharField(max_length=20)
-    postal_code = models.CharField(max_length=10)
+    street = models.CharField(max_length=100,verbose_name='خیابان')
+    city = models.CharField(max_length=50,verbose_name='شهر')
+    state = models.CharField(max_length=20,verbose_name='کوچه')
+    postal_code = models.CharField(max_length=10,verbose_name='پلاک')
     # slug
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True,verbose_name='طوظیحات قرارداد و امنیت')
     # Single Property
     sing = models.ForeignKey(SingleProperty, null=True, blank=True, on_delete=models.CASCADE,
-                             related_name='SingleProperty')
+                             related_name='SingleProperty',verbose_name='')
     # Category
-    category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.CASCADE, related_name='categories')
-    img_category = models.ImageField(upload_to='category/')
+    category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.CASCADE, related_name='categories',verbose_name='دسته')
+    img_category = models.ImageField(upload_to='category/',verbose_name='عکس دسته')
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -54,11 +54,11 @@ class Properties(models.Model):
 
 
 class Contact(models.Model):
-    fullname = models.CharField(max_length=100)
-    email = models.EmailField()
-    subject = models.CharField(max_length=100)
-    message = models.TextField()
-    date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    fullname = models.CharField(max_length=100, verbose_name='نام شخص')
+    email = models.EmailField(verbose_name='ایمیل')
+    subject = models.CharField(max_length=100, verbose_name='موضوع')
+    message = models.TextField(verbose_name='پیغام')
+    date = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name='روز ارسال')
 
     def __str__(self):
         return f'{self.fullname} - {self.subject}'

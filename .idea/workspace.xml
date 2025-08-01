@@ -7,13 +7,12 @@
     <list default="true" id="bddfca1c-7ba5-4124-8616-4ffc78675656" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/properties/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/properties/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/properties/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/properties/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/properties/templates/properties/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/properties/templates/properties/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/properties/templates/properties/properties.html" beforeDir="false" afterPath="$PROJECT_DIR$/properties/templates/properties/properties.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/properties/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +51,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/sprooz/Desktop/paython &amp; HTML &amp; en/Django/VILA/villaNova/static/jquery&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -100,8 +100,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PY-251.23774.444" />
-        <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.26927.90" />
+        <option value="bundled-python-sdk-41e8cd69c857-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26927.90" />
       </set>
     </attachedChunks>
   </component>
@@ -123,11 +123,25 @@
       <workItem from="1753850514175" duration="5573000" />
       <workItem from="1753856962581" duration="238000" />
       <workItem from="1753857258368" duration="1514000" />
-      <workItem from="1753996080614" duration="7644000" />
+      <workItem from="1753996080614" duration="8921000" />
+      <workItem from="1754005529792" duration="327000" />
+      <workItem from="1754005970846" duration="552000" />
+      <workItem from="1754029140679" duration="1938000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
