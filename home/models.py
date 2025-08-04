@@ -6,6 +6,7 @@ class Category(models.Model):
     about = models.TextField()
     title = models.CharField(max_length=20)
     active = models.BooleanField(default=True)
+    img = models.ImageField(upload_to='Category/')
 
     def __str__(self):
         return self.title
@@ -36,13 +37,12 @@ class Properties(models.Model):
     state = models.CharField(max_length=20,verbose_name='کوچه')
     postal_code = models.CharField(max_length=10,verbose_name='پلاک')
     # slug
-    slug = models.SlugField(unique=True,verbose_name='طوظیحات قرارداد و امنیت')
+    slug = models.SlugField(unique=True,blank=True, null=True)
     # Single Property
     sing = models.ForeignKey(SingleProperty, null=True, blank=True, on_delete=models.CASCADE,
                              related_name='SingleProperty',verbose_name='')
     # Category
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.CASCADE, related_name='categories',verbose_name='دسته')
-    img_category = models.ImageField(upload_to='category/',verbose_name='عکس دسته')
 
     def save(self, *args, **kwargs):
         if not self.slug:

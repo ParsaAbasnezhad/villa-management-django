@@ -7,13 +7,13 @@
     <list default="true" id="bddfca1c-7ba5-4124-8616-4ffc78675656" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/properties/templates/properties/properties.html" beforeDir="false" afterPath="$PROJECT_DIR$/properties/templates/properties/properties.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/properties/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/properties/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/include/header_area_start.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/include/header_area_start.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/villaNova/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/villaNova/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +132,7 @@
       <workItem from="1754245361461" duration="12000" />
       <workItem from="1754245748968" duration="187000" />
       <workItem from="1754246210867" duration="449000" />
-      <workItem from="1754274734832" duration="4809000" />
+      <workItem from="1754274734832" duration="8923000" />
     </task>
     <servers />
   </component>

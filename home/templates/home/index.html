@@ -31,7 +31,7 @@
                     <div class="left-image">
                         <img src="{% static 'images/featured.jpg' %}" alt="">
                         <a href=""><img src="{% static 'images/featured-icon.png' %}" alt=""
-                                                             style="max-width: 60px; padding: 0px;"></a>
+                                        style="max-width: 60px; padding: 0px;"></a>
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -192,134 +192,50 @@
                         <div class="row">
                             <div class="nav-wrapper ">
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="appartment-tab" data-bs-toggle="tab"
-                                                data-bs-target="#appartment" type="button" role="tab"
-                                                aria-controls="appartment" aria-selected="true">Appartment
-                                        </button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="villa-tab" data-bs-toggle="tab"
-                                                data-bs-target="#villa"
-                                                type="button" role="tab" aria-controls="villa" aria-selected="false">
-                                            Villa
-                                            House
-                                        </button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="penthouse-tab" data-bs-toggle="tab"
-                                                data-bs-target="#penthouse" type="button" role="tab"
-                                                aria-controls="penthouse" aria-selected="false">Penthouse
-                                        </button>
-                                    </li>
+                                    {% for item in categories %}
+                                        <li>
+                                            <a class="btn"
+                                               href="{% url 'properties:products' item.id %}"
+                                               data-filter="*">{{ item.title }}</a>
+                                        </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="appartment" role="tabpanel"
                                      aria-labelledby="appartment-tab">
                                     <div class="row">
-                                        <div class="col-lg-3">
-                                            <div class="info-table">
-                                                <ul>
-                                                    <li>Total Flat Space <span>185 m2</span></li>
-                                                    <li>Floor number <span>26th</span></li>
-                                                    <li>Number of rooms <span>4</span></li>
-                                                    <li>Parking Available <span>Yes</span></li>
-                                                    <li>Payment Process <span>Bank</span></li>
-                                                </ul>
+{#                                        {% for data in item_full %}#}
+{#                                            <div class="col-lg-3">#}
+{#                                                <div class="info-table">#}
+{#                                                    <ul>#}
+{#                                                        <li>Total Flat Space <span>{{ data.sing.total }}</span></li>#}
+{#                                                        <li>Floor number <span>{{ data.floor }}</span></li>#}
+{#                                                        <li>Number of rooms <span>{{ data.bathroom }}</span></li>#}
+{#                                                        {% if data.parking > 0 %}#}
+{#                                                            <li>Parking Available <span>Yes</span></li>#}
+{#                                                        {% else %}#}
+{#                                                            <li>Parking Available <span>No</span></li>#}
+{#                                                        {% endif %}#}
+{#                                                        <li>Payment Process <span>{{ data.sing.payment }}</span></li>#}
+{#                                                    </ul>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        {% endfor %}#}
+                                        {% for category in categories %}
+                                            <div class="col-lg-6">
+                                                <img src="{{ category.img.url }}" alt="">
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <img src="{% static 'images/deal-01.jpg' %}" alt="">
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <h4>Extra Info About Property</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod
-                                                tempor
-                                                pack incididunt ut labore et dolore magna aliqua quised ipsum
-                                                suspendisse.
-                                                <br><br>When you need free CSS templates, you can simply type TemplateMo
-                                                in
-                                                any search engine website. In addition, you can type TemplateMo
-                                                Portfolio,
-                                                TemplateMo One Page Layouts, etc.</p>
-                                            <div class="icon-button">
-                                                <a href="property-details.html"><i class="fa fa-calendar"></i> Schedule
-                                                    a
-                                                    visit</a>
+                                            <div class="col-lg-3">
+                                                <h4>Extra Info About {{ category.title }}</h4>
+                                                <p>{{ category.about }}</p>
+                                                <div class="icon-button">
+                                                    <a href="{% url 'properties:property_list' %}"><i
+                                                            class="fa fa-calendar"></i>
+                                                        Schedule a visit</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="villa" role="tabpanel" aria-labelledby="villa-tab">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <div class="info-table">
-                                                <ul>
-                                                    <li>Total Flat Space <span>250 m2</span></li>
-                                                    <li>Floor number <span>26th</span></li>
-                                                    <li>Number of rooms <span>5</span></li>
-                                                    <li>Parking Available <span>Yes</span></li>
-                                                    <li>Payment Process <span>Bank</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <img src="{% static 'images/deal-02.jpg' %}" alt="">
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <h4>Detail Info About Villa</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod
-                                                tempor
-                                                pack incididunt ut labore et dolore magna aliqua quised ipsum
-                                                suspendisse.
-                                                <br><br>Swag fanny pack lyft blog twee. JOMO ethical copper mug,
-                                                succulents
-                                                typewriter shaman DIY kitsch twee taiyaki fixie hella venmo after
-                                                messenger
-                                                poutine next level humblebrag swag franzen.</p>
-                                            <div class="icon-button">
-                                                <a href="property-details.html"><i class="fa fa-calendar"></i> Schedule
-                                                    a
-                                                    visit</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="penthouse" role="tabpanel"
-                                     aria-labelledby="penthouse-tab">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <div class="info-table">
-                                                <ul>
-                                                    <li>Total Flat Space <span>320 m2</span></li>
-                                                    <li>Floor number <span>34th</span></li>
-                                                    <li>Number of rooms <span>6</span></li>
-                                                    <li>Parking Available <span>Yes</span></li>
-                                                    <li>Payment Process <span>Bank</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <img src="{% static 'images/deal-03.jpg' %}" alt="">
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <h4>Extra Info About Penthouse</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod
-                                                tempor
-                                                pack incididunt ut labore et dolore magna aliqua quised ipsum
-                                                suspendisse.
-                                                <br><br>Swag fanny pack lyft blog twee. JOMO ethical copper mug,
-                                                succulents
-                                                typewriter shaman DIY kitsch twee taiyaki fixie hella venmo after
-                                                messenger
-                                                poutine next level humblebrag swag franzen.</p>
-                                            <div class="icon-button">
-                                                <a href="property-details.html"><i class="fa fa-calendar"></i> Schedule
-                                                    a
-                                                    visit</a>
-                                            </div>
-                                        </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
@@ -344,10 +260,12 @@
                 {% for property in properties %}
                     <div class="col-lg-4 col-md-6">
                         <div class="item">
-                            <a href="{% url 'home:detail' property.id %}"><img src="{{ property.image.url }}" alt=""></a>
+                            <a href="{% url 'home:detail' property.id %}"><img src="{{ property.image.url }}"
+                                                                               alt=""></a>
                             <span class="category">Luxury Villa</span>
                             <h6>${{ property.price }}</h6>
-                            <h4><a href="{% url 'home:detail' property.id %}">{{ property.street }}New Street {{ property.city }}, OR {{ property.postal_code }}</a></h4>
+                            <h4><a href="{% url 'home:detail' property.id %}">{{ property.street }}New
+                                Street {{ property.city }}, OR {{ property.postal_code }}</a></h4>
                             <ul>
                                 <li>Bedrooms: <span>{{ property.bedrooms }}</span></li>
                                 <li>Bathrooms: <span>{{ property.bathroom }}</span></li>

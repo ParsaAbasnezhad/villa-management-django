@@ -5,9 +5,14 @@ from home.models import *
 
 
 class PropertiesView(ListView):
-    queryset = Properties.objects.all()
+    queryset = Properties.objects.order_by('-id')[:3]
     context_object_name = 'properties'
     template_name = 'home/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['item_full'] = Properties.objects.all()
+        return context
 
 
 def contact(request):
@@ -31,5 +36,5 @@ class PropertyDetailViews(DetailView):
 
 def category(request):
     categories = Category.objects.filter(active=True)
-    return render(request, 'properties/properties.html', {'categories': categories})
+    return render(request, 'home/index.html', {'categories': categories})
 

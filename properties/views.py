@@ -6,15 +6,31 @@ from properties.forms import *
 from home.models import *
 
 
-def properties_by_category(request, category_id):
-    categorys = Category.objects.all()
-    category = get_object_or_404(Category, id=category_id)
-    properties = Properties.objects.filter(category=category, category__active=True)
-    return render(request, 'properties/properties.html', {
-        'category': category,
-        'properties': properties,
-        'categorys': categorys,
-    })
+class PropertiesByCategoryView(ListView):
+    model = Properties
+    template_name = 'properties/properties.html'
+    context_object_name = 'properties'
+    paginate_by = 6
+
+    def get_queryset(self):
+        self.category = get_object_or_404(Category, id=self.kwargs['category_id'])
+        return Properties.objects.filter(category=self.category, category__active=True)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = self.category
+        context['categorys'] = Category.objects.all()
+        return context
+
+class PropertiesView(ListView):
+    model = Properties
+    template_name = 'properties/properties.html'
+    context_object_name = 'all_properties'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['cat'] = Category.objects.all()
+        return context
 
 
 
@@ -39,5 +55,3 @@ class VisitCreateView(View):
             message=message,
             subject=subject)
         return redirect('home:home')
-
-
