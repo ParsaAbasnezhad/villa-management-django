@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, CreateView, View
 from properties.models import *
@@ -6,19 +6,16 @@ from properties.forms import *
 from home.models import *
 
 
+def properties_by_category(request, category_id):
+    categorys = Category.objects.all()
+    category = get_object_or_404(Category, id=category_id)
+    properties = Properties.objects.filter(category=category, category__active=True)
+    return render(request, 'properties/properties.html', {
+        'category': category,
+        'properties': properties,
+        'categorys': categorys,
+    })
 
-class PropertiesView(ListView):
-    queryset = Properties.objects.all()
-    context_object_name = 'properties'
-    paginate_by = 1
-    template_name = 'properties/properties.html'
-
-
-# class VisitCreateView(CreateView):
-#     model = Visite
-#     form_class = VisitForm
-#     template_name = 'properties/contact.html'
-#     success_url = reverse_lazy('home:home')
 
 
 class VisitCreateView(View):
@@ -42,3 +39,5 @@ class VisitCreateView(View):
             message=message,
             subject=subject)
         return redirect('home:home')
+
+

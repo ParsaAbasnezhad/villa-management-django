@@ -16,25 +16,20 @@
     <div class="section properties">
         <div class="container">
             <ul class="properties-filter">
-                <li>
-                    <a class="is_active" href="#!" data-filter="*">Show All</a>
-                </li>
-                <li>
-                    <a href="#!" data-filter=".adv">Apartment</a>
-                </li>
-                <li>
-                    <a href="#!" data-filter=".str">Villa House</a>
-                </li>
-                <li>
-                    <a href="#!" data-filter=".rac">Penthouse</a>
-                </li>
+                {% for cat in categorys %}
+                    <li>
+                        <a class="btn"
+                           href="{% url 'properties:products' cat.id %}"
+                           data-filter="*">{{ cat.title }}</a>
+                    </li>
+                {% endfor %}
             </ul>
-            <div class="row properties-box">
+            <div class="row properties-box">a
                 {% for product in properties %}
                     <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
                         <div class="item">
                             <a href="{% url 'home:detail' product.id %}"><img
-                                    src="{% static 'images/property-01.jpg' %}" alt=""></a>
+                                    src="{{ product.image.url }}" alt=""></a>
                             <span class="category">Luxury Villa</span>
                             <h6>${{ product.price }}</h6>
                             <h4><a href="{% url 'home:detail' product.id %}">{{ product.street }}New
@@ -53,27 +48,27 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="pagination">
-                        {% if properties.has_previous %}
-                            <li><a href="?page={{ properties.previous_page_number }}">«</a></li>
-                        {% endif %}
-
-                        {% for num in properties.paginator.page_range %}
-                            {% if num == properties.number %}
-                                <li class="active"><span>{{ num }}</span></li>
-                            {% else %}
-                                <li><a href="?page={{ num }}">{{ num }}</a></li>
-                            {% endif %}
-                        {% endfor %}
-
-                        {% if properties.has_next %}
-                            <li><a href="?page={{ properties.next_page_number }}">»</a></li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </div>
+            {#            <div class="row">#}
+            {#                <div class="col-lg-12">#}
+            {#                    <ul class="pagination">#}
+            {#                        {% if properties.has_previous %}#}
+            {#                            <li><a href="?page={{ properties.previous_page_number }}">«</a></li>#}
+            {#                        {% endif %}#}
+            {##}
+            {#                        {% for num in properties.paginator.page_range %}#}
+            {#                            {% if num == properties.number %}#}
+            {#                                <li class="active"><span>{{ num }}</span></li>#}
+            {#                            {% else %}#}
+            {#                                <li><a href="?page={{ num }}">{{ num }}</a></li>#}
+            {#                            {% endif %}#}
+            {#                        {% endfor %}#}
+            {##}
+            {#                        {% if properties.has_next %}#}
+            {#                            <li><a href="?page={{ properties.next_page_number }}">»</a></li>#}
+            {#                        {% endif %}#}
+            {#                    </ul>#}
+            {#                </div>#}
+            {#            </div>#}
         </div>
     </div>
 {% endblock %}

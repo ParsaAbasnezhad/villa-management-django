@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView, ListView
+from django.views.generic import  ListView
 from django.views.generic.detail import DetailView
-from home.models import Properties, Contact, Category
+from home.models import *
 
 
 class PropertiesView(ListView):
@@ -28,7 +28,8 @@ class PropertyDetailViews(DetailView):
     template_name = 'home/detail.html'
     slug_url_kwarg = 'slug'
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['categories'] = Category.objects.filter(active=True)
-    #     return context
+
+def category(request):
+    categories = Category.objects.filter(active=True)
+    return render(request, 'properties/properties.html', {'categories': categories})
+
