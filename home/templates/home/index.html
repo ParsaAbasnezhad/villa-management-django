@@ -179,67 +179,28 @@
     </div>
 
     <div class="section best-deal">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="section-heading">
-                        <h6>| Best Deal</h6>
-                        <h2>Find Your Best Deal Right Now!</h2>
-                    </div>
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-lg-4">
+                <div class="section-heading">
+                    <h2>Category file</h2>
                 </div>
-                <div class="col-lg-12">
-                    <div class="tabs-content">
-                        <div class="row">
-                            <div class="nav-wrapper ">
+            </div>
+            <div class="col-lg-12">
+                <div class="tabs-content">
+                    <div class="row mt-3">
+                        {% for item in category %}
+                            <div class="nav-wrapper mt-5">
                                 <ul class="nav nav-tabs" role="tablist">
-                                    {% for item in categories %}
-                                        <li>
-                                            <a class="btn"
-                                               href="{% url 'properties:products' item.id %}"
-                                               data-filter="*">{{ item.title }}</a>
-                                        </li>
-                                    {% endfor %}
+                                    <li>
+                                        <a class="btn btn-dark text-primary"
+                                           href="{% url 'properties:products' item.id %}"
+                                           data-filter="*">{{ item.title }}</a>
+                                        <p>{{ item.about }}</p>
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="appartment" role="tabpanel"
-                                     aria-labelledby="appartment-tab">
-                                    <div class="row">
-{#                                        {% for data in item_full %}#}
-{#                                            <div class="col-lg-3">#}
-{#                                                <div class="info-table">#}
-{#                                                    <ul>#}
-{#                                                        <li>Total Flat Space <span>{{ data.sing.total }}</span></li>#}
-{#                                                        <li>Floor number <span>{{ data.floor }}</span></li>#}
-{#                                                        <li>Number of rooms <span>{{ data.bathroom }}</span></li>#}
-{#                                                        {% if data.parking > 0 %}#}
-{#                                                            <li>Parking Available <span>Yes</span></li>#}
-{#                                                        {% else %}#}
-{#                                                            <li>Parking Available <span>No</span></li>#}
-{#                                                        {% endif %}#}
-{#                                                        <li>Payment Process <span>{{ data.sing.payment }}</span></li>#}
-{#                                                    </ul>#}
-{#                                                </div>#}
-{#                                            </div>#}
-{#                                        {% endfor %}#}
-                                        {% for category in categories %}
-                                            <div class="col-lg-6">
-                                                <img src="{{ category.img.url }}" alt="">
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <h4>Extra Info About {{ category.title }}</h4>
-                                                <p>{{ category.about }}</p>
-                                                <div class="icon-button">
-                                                    <a href="{% url 'properties:property_list' %}"><i
-                                                            class="fa fa-calendar"></i>
-                                                        Schedule a visit</a>
-                                                </div>
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ class PropertiesView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['item_full'] = Properties.objects.all()
+        context['category'] = Category.objects.all()
         return context
 
 
@@ -33,8 +33,4 @@ class PropertyDetailViews(DetailView):
     template_name = 'home/detail.html'
     slug_url_kwarg = 'slug'
 
-
-def category(request):
-    categories = Category.objects.filter(active=True)
-    return render(request, 'home/index.html', {'categories': categories})
 
